@@ -1,7 +1,11 @@
 
 # Variable: A storage location identified by its name, containing some value.
 # Question: Assign a value of 10 to variable a and 20 to variable b
+a, b = 10, 20
+
 # Question: Store the result of a + b in a variable c and print it. What is the result of a + b?
+c = a + b
+print(c)
 
 s = '  Some string '
 # Question: How do you remove the empty spaces in front of and behind the string s?
@@ -13,12 +17,16 @@ l = [1, 2, 3, 4]
 
 # Question: How do you access the elements in index 0 and 3? Print the results.
 ## NOTE: lists retain the order of elements in it but dictionary doesn't
+print(l[0])
+print(l[3])
 
 ## Dictionary: A collection of key-value pairs, where each key is mapped to a value using a hash function. Provides fast data retrieval based on keys.
 d = {'a': 1, 'b': 2}
 
 # Question: How do you access the values associated with keys 'a' and 'b'?
 ## NOTE: The dictionary cannot have duplicate keys
+print(d["a"])
+print(d.get("b"))
 
 ## Set: A collection of unique elements that do not allow duplicates
 my_set = set()
@@ -27,23 +35,29 @@ my_set.add(10)
 my_set.add(10)
 
 # Question: What will be the output of my_set?
+print(my_set)  # {10}
 
 ## Tuple: A collection of immutable (non-changeable) elements, tuples retain their order once created.
 my_tuple = (1, 'hello', 3.14)
 
 # Question: What is the value of my_tuple?
+print(my_tuple)  # (1, 'hello', 3.14)
 
 # Accessing elements by index
 
 # Question: How do you access the elements in index 0 and 1 of my_tuple?
+print(my_tuple[0])  # 1
+print(my_tuple[1])  # hello
 
 # Counting occurrences of an element
 count_tuple = (1, 2, 3, 1, 1, 2)
 
 # Question: How many times does the number 1 appear in count_tuple?
+print(count_tuple.count(1))  # 3
 
 # Finding the index of an element
 # Question: What is the index of the first occurrence of the number 2 in count_tuple?
+print(count_tuple.index(2))  # 1
 
 # Loop allows a specific chunk of code to be repeated a certain number of times
 # Example: We can use a loop to print numbers 0 through 10
@@ -52,12 +66,20 @@ for i in range(11):
 
 # We can loop through our data structures as shown below
 # Question: How do you loop through a list and print its elements?
+print(l)  # l = [1, 2, 3, 4]
+for i in l:
+    print(i)
 
 # Dictionary loop
 # Question: How do you loop through a dictionary and print its keys and values?
+print(d)  # d = {'a': 1, 'b': 2}
+for k,v in d.items():
+    print(k,v)
 
 # Comprehension is a shorthand way of writing a loop
 # Question: Multiply every element in list l with 2 and print the result
+_2xl = [i*2 for i in l]
+print(_2xl)  # [2, 4, ,6 8]
 
 # Functions: A block of code that can be re-used as needed. This allows for us to have logic defined in one place, making it easy to maintain and use.
 ## For example, let's create a simple function that takes a list as an input and returns another list whose values are greater than 3
@@ -68,9 +90,11 @@ def gt_three(input_list):
 
 list_1 = [1, 2, 3, 4, 5, 6]
 # Question: How do you use the gt_three function to filter elements greater than 3 from list_1?
+gt_three(list_1)  # [4, 5, 6]
 
 list_2 = [1, 2, 3, 1, 1, 1]
 # Question: What will be the output of gt_three(list_2)?
+gt_three(list_1)  # []
 
 # Classes and Objects
 # Think of a class as a blueprint and objects as things created based on that blueprint
@@ -91,6 +115,8 @@ class DataExtractor:
         pass
 
 # Question: How do you create a DataExtractor object and print its some_value attribute?
+de_obj = DataExtractor(12)
+print(de_obj)  # 12
 
 # Libraries are code that can be reused.
 
@@ -99,6 +125,7 @@ class DataExtractor:
 from datetime import datetime  # You can import library or your code from another file with the import statement
 
 # Question: How do you print the current date in the format 'YYYY MM DD'? Hint: Google strftime
+print(datetime.now().strftime("%Y %m %d"))
 
 # Exception handling: When an error occurs, we need our code to gracefully handle it without just stopping. 
 # Here is how we can handle errors when the program is running
@@ -120,3 +147,13 @@ l = [1, 2, 3, 4, 5]
 
 # Question: How do you handle an IndexError when accessing an invalid index in a list?
 # NOTE: in the except block its preferred to specify the exact erro/exception that you want to handle
+
+try:
+    for i in range(len(l)):
+        v = l[i]
+except IndexError:
+    print("Index out of range")
+else:
+    print("Value for the given index is:", v)
+finally:
+    print("Done processing.")
