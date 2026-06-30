@@ -4,12 +4,11 @@
 a, b = 10, 20
 
 # Question: Store the result of a + b in a variable c and print it. What is the result of a + b?
-c = a + b
-print(c)
+
 
 s = '  Some string '
 # Question: How do you remove the empty spaces in front of and behind the string s?
-print(s.strip())
+
 
 # Data Structures are ways of representing data, each has its own pros and cons and places that they are the right fit.
 ## List: A collection of elements that can be accessed by knowing the location (aka index) of the element
@@ -17,16 +16,14 @@ l = [1, 2, 3, 4]
 
 # Question: How do you access the elements in index 0 and 3? Print the results.
 ## NOTE: lists retain the order of elements in it but dictionary doesn't
-print(l[0])
-print(l[3])
+
 
 ## Dictionary: A collection of key-value pairs, where each key is mapped to a value using a hash function. Provides fast data retrieval based on keys.
 d = {'a': 1, 'b': 2}
 
 # Question: How do you access the values associated with keys 'a' and 'b'?
 ## NOTE: The dictionary cannot have duplicate keys
-print(d["a"])
-print(d.get("b"))
+
 
 ## Set: A collection of unique elements that do not allow duplicates
 my_set = set()
@@ -41,23 +38,23 @@ print(my_set)  # {10}
 my_tuple = (1, 'hello', 3.14)
 
 # Question: What is the value of my_tuple?
-print(my_tuple)  # (1, 'hello', 3.14)
+  # (1, 'hello', 3.14)
 
 # Accessing elements by index
 
 # Question: How do you access the elements in index 0 and 1 of my_tuple?
-print(my_tuple[0])  # 1
-print(my_tuple[1])  # hello
+  # 1
+  # hello
 
 # Counting occurrences of an element
 count_tuple = (1, 2, 3, 1, 1, 2)
 
 # Question: How many times does the number 1 appear in count_tuple?
-print(count_tuple.count(1))  # 3
+  # 3
 
 # Finding the index of an element
 # Question: What is the index of the first occurrence of the number 2 in count_tuple?
-print(count_tuple.index(2))  # 1
+  # 1
 
 # Loop allows a specific chunk of code to be repeated a certain number of times
 # Example: We can use a loop to print numbers 0 through 10
@@ -67,14 +64,12 @@ for i in range(11):
 # We can loop through our data structures as shown below
 # Question: How do you loop through a list and print its elements?
 print(l)  # l = [1, 2, 3, 4]
-for i in l:
-    print(i)
+
 
 # Dictionary loop
 # Question: How do you loop through a dictionary and print its keys and values?
 print(d)  # d = {'a': 1, 'b': 2}
-for k,v in d.items():
-    print(k,v)
+
 
 # Comprehension is a shorthand way of writing a loop
 # Question: Multiply every element in list l with 2 and print the result
